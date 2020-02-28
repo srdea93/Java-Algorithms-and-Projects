@@ -1,0 +1,9 @@
+README
+Steven Dea
+Spring 2020
+
+This program was written using Java 11.0.6 and written using the Eclipse IDE.
+
+This program will take an input text file and write the resulting output to a specified output text file. This program requires two command line arguments, the first is the name of the input text file and the second is the name of the desired output text file.
+
+This program implements both a naive method of matrix multiplication as well as Strassen's method.

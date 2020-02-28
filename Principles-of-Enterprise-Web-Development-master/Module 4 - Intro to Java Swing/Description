@@ -1,0 +1,3 @@
+This program implements Java Swing to create a GUI that handles a booking app for a hiking company. The
+user can input dates they wish to start their hike and see if they are valid dates or not. They can also
+select which hike they want and for how many days and calculate the total price.

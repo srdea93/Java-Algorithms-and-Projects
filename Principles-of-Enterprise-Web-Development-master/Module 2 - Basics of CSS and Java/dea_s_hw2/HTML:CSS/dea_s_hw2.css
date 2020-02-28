@@ -1,0 +1,46 @@
+table {
+	margin: .3em;
+	width: 350px;
+	color: black;
+	background: white;
+}
+
+h1 {
+	text-align: center;
+	font-size: 2em;
+	color: blue;
+}
+
+h5 {
+	text-align: left;
+	font-size: 1em;
+	color: black;
+}
+
+a {
+	text-align: center;
+	color: red;
+}
+
+li {
+	color: orange;
+}
+
+body {
+	color: lightblue;
+	text-align: left;
+}
+
+img {
+	position: absolute;
+	right: 0px;
+	padding: 10px;
+}
+
+tr {
+	align-self: center;
+}
+
+table, th, td{
+	border: 1px solid black;
+}
