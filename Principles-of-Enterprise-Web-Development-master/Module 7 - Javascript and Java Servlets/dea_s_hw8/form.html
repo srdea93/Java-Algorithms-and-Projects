@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<title>Hike Form</title>
+<link rel="stylesheet" href="styles.css">
+<script type="text/javascript" src="formScript.js"></script>
+
+</head>
+
+<body>
+	<form name=hikeform action="http://localhost:8080/dea_s_hw8/hikeServlet" onsubmit="return validateForm()" method=GET>
+	
+	<div class=content-wrapper>
+		
+		<div class=left-column>
+		<fieldset id="fieldset1">
+			<legend id="legend1">Date Selection</legend>
+			Month: <input type="TEXT" name="Month" value="1">
+			<br />
+			Day: <input type="TEXT" name="Day" value="1">
+			<br />
+			Year: <input type="TEXT" name="Year" value="2020">
+			<br />
+		</fieldset>	
+		</div>
+		
+
+		<div class=middle-column>
+			<fieldset id="fieldset2">
+				<legend id="legend2">Hike Selection</legend>
+			<input type="RADIO" name="hikes" checked value = "Gardiner Lake">Gardiner Lake
+			<br />
+			<br />
+			<input type="RADIO" name="hikes" value="The Hellroaring Plateau">The Hellroaring Plateau
+			<br />
+			<br />
+			<input type="RADIO" name="hikes" value="The Beaten Path">The Beaten Path
+			</fieldset>
+		</div>
+
+		
+		<div class=right-column>
+			<fieldset id="fieldset3">
+				<legend id="legend3">Length Selection</legend>
+				<input type="RADIO" name="length" checked value = "2">2 Days
+				<br />
+				<input type="RADIO" name="length" value = "3">3 Days
+				<br />
+				<input type="RADIO" name="length" value = "4">4 Days
+				<br />
+				<input type="RADIO" name="length" value = "5">5 Days
+				<br />
+				<input type="RADIO" name="length" value = "7">7 Days
+			</fieldset>
+		</div>
+		
+		<div class=rightest-column>
+			<fieldset id="fieldset4">
+				<legend id="legend4">Number of Hikers</legend>
+				Hikers: <input type="TEXT" name="hikers" value="1">
+			</fieldset>
+		</div>
+	</div>
+	
+	<div class=submit-wrapper>
+		<div class=submit>
+			<input type="SUBMIT">
+		</div>
+	</div>
+	
+	</form>
+	<div class="pricing-wrapper">
+		<div class="pricing">
+		Price:
+		</div>
+	</div>
+</body>
+</html>
