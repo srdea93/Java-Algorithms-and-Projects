@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>BHC Booking</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta charset="utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			function sendRequest(url) {
+				// get form parameters and translate them to a JSON object
+				// that is mapped to a JSON/Java object in service
+				var viewArr = $("#myForm").serializeArray();
+			  	var view = {};
+			  	// need to convert { name:"VarName", value:"ValName"} to {VarName:"ValName"}
+			  	for (var i in viewArr) {
+			    	view[viewArr[i].name] = viewArr[i].value;
+			  	}
+                          
+                // call back to service with post containing JSON data and on
+                // return process results back into page          
+                $.ajax({
+                    type:"POST",
+                    contentType: 'application/json',
+                    dataType: "json",
+                    data: JSON.stringify(view),
+                    url: url,
+                    // you will want to update success function to get specific
+                    // JSON data fields for output back to the original HTML page
+                    success: function(data) {
+                    	// this sets the html content of the html object
+						// with id of reponseArea.  
+						$("#responseArea").html("<p>Price: $" + data.PRICE + "<p>" + "<p> Errors: " + data.ERROR + "<p>");
+                 	}
+                });
+			};	
+		</script>
+	</head>
+	<body>
+		<!-- the form contains the input elements to collect specific information
+			 as you did in earlier work.  Make sure names of parameters correspond
+			 to the field values in the desired JSON/Java object. -->
+		<form id="myForm">
+			<!-- Add your gui widgets and input elements here -->
+			<!-- Keep the button for submitting your form, but you need to 
+				 update the parameter, url, to reference your back end 
+				 service that will process the input data -->
+			<div class=content-wrapper>
+				<div class=left-column>
+					<fieldset id="fieldset1">
+						<legend id="legend1">Date Selection</legend>
+						Month: <input type="TEXT" name="MONTH" value="1">
+						<br />
+						Day: <input type="TEXT" name="DAY" value="1">
+						<br />
+						Year: <input type="TEXT" name="YEAR" value="2020">
+						<br />
+					</fieldset>	
+				</div>
+				
+		
+				<div class=middle-column>
+					<fieldset id="fieldset2">
+						<legend id="legend2">Hike Selection</legend>
+					<input type="RADIO" name="HIKEID" checked value = "0">Gardiner Lake
+					<br />
+					<br />
+					<input type="RADIO" name="HIKEID" value="1">The Hellroaring Plateau
+					<br />
+					<br />
+					<input type="RADIO" name="HIKEID" value="2">The Beaten Path
+					</fieldset>
+				</div>
+		
+				
+				<div class=right-column>
+					<fieldset id="fieldset3">
+						<legend id="legend3">Length Selection</legend>
+						<input type="RADIO" name="LENGTH" checked value = "2">2 Days
+						<br />
+						<input type="RADIO" name="LENGTH" value = "3">3 Days
+						<br />
+						<input type="RADIO" name="LENGTH" value = "4">4 Days
+						<br />
+						<input type="RADIO" name="LENGTH" value = "5">5 Days
+						<br />
+						<input type="RADIO" name="LENGTH" value = "7">7 Days
+					</fieldset>
+				</div>
+				
+				<div class=rightest-column>
+					<fieldset id="fieldset4">
+						<legend id="legend4">Number of Hikers</legend>
+						Hikers: <input type="TEXT" name="HIKERS" value="1">
+					</fieldset>
+				</div>
+			</div>
+            <button type="button" onclick="sendRequest('https://web6.jhuep.com/dea_s_hw13/webresources/service/load')">Get Rate</button>
+		</form>     
+		<!-- This is nothing more than a labelled "output area" for your results or errors -->
+        <div id="responseArea"><pre></pre></div>
+	</body>
+</html>
