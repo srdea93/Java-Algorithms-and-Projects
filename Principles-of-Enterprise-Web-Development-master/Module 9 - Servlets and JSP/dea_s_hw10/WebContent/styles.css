@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+.content-wrapper {
+	display: grid;
+	padding: 5px 5px 5px 5px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+fieldset {
+	height: 200px;
+	width: 90%;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-size: 18px;
+}
+
+#fieldset1 {
+	border: 2px solid lightseagreen;
+	color: black;
+}
+
+#fieldset2 {
+	border: 2px solid lightblue;
+}
+
+#fieldset3 {
+	border: 2px solid lightcoral;
+	align-self: center;
+}
+#fieldset4 {
+	border: 2px solid lightgray;
+	align-self: center;
+}
+
+legend {
+	font-size:20px;
+}
+
+#legend1 {
+	color: seagreen;
+}
+
+#legend2 {
+	color: blue;
+}
+
+#legend3 {
+	color: coral;
+}
+
+#legend4 {
+	color: gray;
+}
+
+.pricing-wrapper {
+	color:purple;
+	text-align: center;
+}
+
+.pricing {
+	display: inline-block;
+}
+
+.submit-wrapper {
+	padding-left: 1%;
+}
+
+.submit {
+	display: inline-block;
+}
